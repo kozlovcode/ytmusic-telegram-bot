@@ -37,7 +37,7 @@ def send_text(message):
 	os.remove(f'{filename}.m4a')
 
 
-@server.route('/', methods=['POST'])
+@server.route('/djcmr543Tfkvi6932FdcXz', methods=['POST'])
 def webhook():
 	bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
 	return "!", 200
