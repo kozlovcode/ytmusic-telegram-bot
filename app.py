@@ -32,7 +32,7 @@ def send_text(message):
 	time.sleep(0.5)
 	ytsound = open(f'{filename}.m4a', 'rb')
 	
-	bot.send_audio(message.chat.id, ytsound, '', '', artist, songtitle)
+	bot.send_audio(message.chat.id, ytsound, '', '', artist[:-1], songtitle[1:])
 
 	os.remove(f'{filename}.m4a')
 
