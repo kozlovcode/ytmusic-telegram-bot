@@ -22,8 +22,6 @@ def send_text(message):
 	YouTube(link).streams.get_highest_resolution().download()
 	yt = YouTube(link)
 	filename = yt.title.replace('.','')
-	artist = yt.title.replace('.','').split('-')[0]
-	songtitle = yt.title.replace('.','').split('-')[1]
 
 	yt.streams.filter(only_audio=True, mime_type='audio/mp4').order_by('abr')[-0].download()
 	time.sleep(0.5)
@@ -32,7 +30,7 @@ def send_text(message):
 	time.sleep(0.5)
 	ytsound = open(f'{filename}.m4a', 'rb')
 	
-	bot.send_audio(message.chat.id, ytsound, '', '', artist[:-1], songtitle[1:])
+	bot.send_audio(message.chat.id, ytsound)
 
 	os.remove(f'{filename}.m4a')
 
