@@ -10,7 +10,7 @@ server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	bot.send_message(message.chat.id, 'Привет, отправь мне ссылку а я скину тебе песню ;-)')
+	bot.send_message(message.chat.id, 'Кидай ссылку на песню и я пришлю тебе её 👌')
 
 
 @bot.message_handler(content_types=['text'])
